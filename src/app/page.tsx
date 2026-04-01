@@ -150,7 +150,7 @@ const services = [
   { icon: "biotech",         title: "Lab Tests",        desc: "Hematology, Biochemistry, and Microbiology panels." },
   { icon: "cardiology",      title: "Cardiology",       desc: "ECG, Echocardiogram, and Stress Testing." },
   { icon: "health_and_safety", title: "Health Checks",  desc: "Comprehensive pre-employment and annual screenings." },
-  { icon: "microscope",      title: "Endoscopy",        desc: "Upper and Lower GI tract internal examinations." },
+  { icon: "gastroenterology", title: "Endoscopy",        desc: "Upper and Lower GI tract internal examinations." },
   { icon: "pregnant_woman",  title: "Antenatal",        desc: "Specialized prenatal care and fetal monitoring." },
   { icon: "dna",             title: "DNA Testing",      desc: "Paternity tests and genetic health mapping." },
   { icon: "exercise",        title: "Physiotherapy",    desc: "Rehabilitation and recovery management." },
@@ -376,36 +376,65 @@ function ResultsPortalTeaser() {
           </a>
         </div>
 
-        {/* Visual mockup */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/20">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
-            <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
-            <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
-          </div>
-          <div className="space-y-3">
-            <div className="h-4 bg-white/20 rounded-lg w-3/4" />
-            <div className="h-3 bg-white/10 rounded-lg w-full" />
-            <div className="h-3 bg-white/10 rounded-lg w-5/6" />
-            <div className="my-4 h-px bg-white/10" />
-            <div className="flex gap-3">
-              <div className="h-8 bg-white/20 rounded-lg flex-1" />
-              <div className="h-8 bg-white/10 rounded-lg flex-1" />
-              <div className="h-8 bg-white/10 rounded-lg flex-1" />
-              <div className="h-8 bg-white/10 rounded-lg flex-1" />
+        {/* Mini report card — solid white so it reads clearly on blue */}
+        <div className="bg-white rounded-2xl shadow-2xl overflow-hidden text-slate-900">
+          {/* Card header */}
+          <div className="bg-primary px-5 py-4 flex items-center justify-between">
+            <div>
+              <p className="text-white/60 text-xs font-bold uppercase tracking-widest">Laboratory Report</p>
+              <p className="text-white font-black text-base leading-tight">Full Blood Count</p>
             </div>
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="flex gap-3 items-center">
-                <div className="h-3 bg-white/15 rounded flex-1" />
-                <div className="h-3 bg-white/15 rounded w-12" />
-                <div className="h-3 bg-white/10 rounded w-16" />
-                <div className="h-3 bg-green-400/40 rounded w-10" />
+            <span className="text-xs font-bold bg-green-400/20 border border-green-400/40 text-green-200 px-2.5 py-1 rounded-full">
+              ✓ Verified
+            </span>
+          </div>
+
+          {/* Patient row */}
+          <div className="px-5 py-3 bg-slate-50 border-b border-slate-100 flex items-center justify-between text-xs">
+            <div>
+              <p className="text-slate-400">Patient</p>
+              <p className="font-bold text-slate-800">Adaeze Okonkwo</p>
+            </div>
+            <div className="text-right">
+              <p className="text-slate-400">ID</p>
+              <p className="font-bold text-primary">AML-2024-0042</p>
+            </div>
+            <div className="text-right">
+              <p className="text-slate-400">Date</p>
+              <p className="font-semibold text-slate-700">29 Mar 2026</p>
+            </div>
+          </div>
+
+          {/* Results table */}
+          <div className="px-5 py-3">
+            <div className="grid grid-cols-4 gap-2 text-xs font-bold text-slate-400 uppercase tracking-wider mb-2 px-1">
+              <span className="col-span-2">Test</span>
+              <span className="text-right">Result</span>
+              <span className="text-right">Flag</span>
+            </div>
+            {[
+              { test: "Haemoglobin",   result: "13.5 g/dL",     flag: "Normal",  ok: true },
+              { test: "WBC Count",     result: "6.2 ×10³/μL",   flag: "Normal",  ok: true },
+              { test: "Platelet",      result: "220 ×10³/μL",   flag: "Normal",  ok: true },
+              { test: "Eosinophils",   result: "0.8%",           flag: "Low",     ok: false },
+            ].map((row) => (
+              <div key={row.test} className="grid grid-cols-4 gap-2 text-xs py-1.5 border-t border-slate-100 items-center">
+                <span className="col-span-2 text-slate-700 font-medium">{row.test}</span>
+                <span className="text-right font-bold text-slate-900">{row.result}</span>
+                <span className={`text-right font-bold ${row.ok ? "text-green-500" : "text-yellow-500"}`}>
+                  {row.flag}
+                </span>
               </div>
             ))}
           </div>
-          <div className="mt-5 flex items-center gap-2">
-            <span className="material-symbols-outlined text-green-300 text-sm">verified</span>
-            <span className="text-xs text-white/60 font-medium">Report verified · MLSCN Certified</span>
+
+          {/* Footer */}
+          <div className="px-5 py-3 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+            <span className="text-xs text-slate-400">Dr. K. Adeleke · FMCPath</span>
+            <span className="flex items-center gap-1 text-xs text-green-600 font-semibold">
+              <span className="material-symbols-outlined text-sm">verified</span>
+              MLSCN Certified
+            </span>
           </div>
         </div>
       </div>

@@ -64,7 +64,7 @@ export default function PortalPage() {
                   autoComplete="username"
                   value={patientId}
                   onChange={(e) => setPatientId(e.target.value)}
-                  className={`w-full px-4 py-3 rounded-xl border-2 bg-slate-50 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/20 ${
+                  className={`w-full px-4 py-3.5 rounded-xl border-2 bg-slate-50 text-base outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/20 ${
                     hasError && !patientId.trim()
                       ? "border-red-300 focus:border-red-400"
                       : "border-transparent focus:border-primary"
@@ -102,7 +102,7 @@ export default function PortalPage() {
                   autoComplete="current-password"
                   value={accessCode}
                   onChange={(e) => setAccessCode(e.target.value)}
-                  className={`w-full px-4 py-3 rounded-xl border-2 bg-slate-50 text-sm outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/20 ${
+                  className={`w-full px-4 py-3.5 rounded-xl border-2 bg-slate-50 text-base outline-none transition-all focus:bg-white focus:ring-2 focus:ring-primary/20 ${
                     hasError && !accessCode.trim()
                       ? "border-red-300 focus:border-red-400"
                       : "border-transparent focus:border-primary"

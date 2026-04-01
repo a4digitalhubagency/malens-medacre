@@ -43,7 +43,7 @@ export default function ResultsPage() {
         <div className="max-w-3xl mx-auto">
 
           {/* Toolbar */}
-          <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-5 gap-3">
             <a
               href="/portal"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-primary transition-colors"
@@ -57,10 +57,11 @@ export default function ResultsPage() {
               <button
                 disabled
                 title="Full download available in production"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg border border-slate-200 text-sm font-semibold text-slate-400 cursor-not-allowed"
+                className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-400 cursor-not-allowed"
               >
                 <span className="material-symbols-outlined text-base">download</span>
-                Download PDF
+                <span className="hidden sm:inline">Download PDF</span>
+                <span className="sm:hidden">PDF</span>
               </button>
             </div>
           </div>
@@ -71,7 +72,7 @@ export default function ResultsPage() {
             className="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden"
           >
             {/* Report header */}
-            <div className="bg-primary px-6 sm:px-8 py-6 text-white">
+            <div className="bg-primary px-4 sm:px-8 py-5 sm:py-6 text-white">
               <div className="flex items-start justify-between gap-4 flex-wrap">
                 <div>
                   <p className="text-white/60 text-xs font-bold uppercase tracking-widest mb-1">
@@ -94,7 +95,7 @@ export default function ResultsPage() {
               </div>
             </div>
 
-            <div className="px-6 sm:px-8 py-6 space-y-6">
+            <div className="px-4 sm:px-8 py-5 sm:py-6 space-y-5 sm:space-y-6">
 
               {/* Patient info */}
               <div>
@@ -228,7 +229,7 @@ export default function ResultsPage() {
             </div>
 
             {/* Report footer */}
-            <div className="bg-slate-50 border-t border-slate-100 px-6 sm:px-8 py-4">
+            <div className="bg-slate-50 border-t border-slate-100 px-4 sm:px-8 py-4">
               <p className="text-xs text-slate-400 text-center">
                 This report is confidential and intended solely for the named patient and their referring physician. &nbsp;·&nbsp; Malens Medcare — ISO Standard Diagnostic Center, Lagos.
               </p>
