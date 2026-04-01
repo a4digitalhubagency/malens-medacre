@@ -5,7 +5,7 @@ import Image from "next/image";
 const links: [string, string][] = [
   ["Services", "#services"],
   ["Why Us", "#why-us"],
-  ["Results Portal", "#portal"],
+  ["Results Portal", "/portal"],
   ["Contact", "#contact"],
 ];
 
@@ -40,7 +40,7 @@ export default function Header() {
 
           <div className="flex items-center gap-3">
             <a
-              href="#contact"
+              href="/book"
               className="hidden md:inline-flex items-center bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-lg text-sm font-bold transition-all shadow-lg shadow-primary/20"
             >
               Book Appointment
@@ -101,7 +101,7 @@ export default function Header() {
 
             <div className="p-6 border-t border-slate-100">
               <a
-                href="#contact"
+                href="/book"
                 onClick={() => setOpen(false)}
                 className="block w-full bg-primary text-white text-center py-3.5 rounded-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all"
               >

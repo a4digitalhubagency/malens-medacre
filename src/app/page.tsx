@@ -13,7 +13,7 @@ export default function HomePage() {
         <ServicesGrid />
         <WhyUs />
         <HowItWorks />
-        <ResultsPortal />
+        <ResultsPortalTeaser />
         <Testimonials />
         <CorporatePartners />
       </main>
@@ -43,10 +43,7 @@ function HeroSection() {
         {/* Text */}
         <div className="z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-5">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary" />
-            </span>
+            <span className="inline-flex rounded-full h-2 w-2 bg-primary" />
             Open for next-day bookings
           </div>
 
@@ -63,17 +60,17 @@ function HeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a
-              href="#contact"
+              href="/book"
               className="inline-flex items-center justify-center gap-2 bg-primary text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold sm:text-lg shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition-all"
             >
-              Schedule Your Visit
+              Book an Appointment
               <span className="material-symbols-outlined text-xl">arrow_forward</span>
             </a>
             <a
               href="#services"
               className="inline-flex items-center justify-center gap-2 bg-white border border-slate-200 text-slate-700 px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold sm:text-lg hover:bg-slate-50 hover:border-slate-300 transition-all"
             >
-              View Lab Menu
+              View Our Services
             </a>
           </div>
         </div>
@@ -185,7 +182,7 @@ function ServicesGrid() {
               <h3 className="text-base md:text-lg font-bold mb-1.5 md:mb-2">{title}</h3>
               <p className="text-slate-500 text-sm flex-1">{desc}</p>
               <a
-                href="#contact"
+                href="/book"
                 className="mt-4 inline-flex items-center gap-1 text-primary text-sm font-semibold hover:gap-2 transition-all"
               >
                 Book this test
@@ -239,7 +236,7 @@ function WhyUs() {
           </ul>
 
           <a
-            href="#contact"
+            href="/book"
             className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3.5 sm:px-8 sm:py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 hover:-translate-y-0.5 transition-all"
           >
             Schedule Your Visit Today
@@ -324,7 +321,7 @@ function HowItWorks() {
         </div>
 
         <a
-          href="#contact"
+          href="/book"
           className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3.5 sm:px-10 sm:py-4 rounded-xl font-bold sm:text-lg shadow-xl shadow-primary/30 hover:-translate-y-0.5 transition-all"
         >
           Book Your Appointment
@@ -335,15 +332,9 @@ function HowItWorks() {
   );
 }
 
-/* ─── Results Portal ─────────────────────────────────────────────────────── */
+/* ─── Results Portal Teaser ──────────────────────────────────────────────── */
 
-function ResultsPortal() {
-  const avatars = [
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBKp_F6AdyJweVzvglI9woZ1hYUreUPU9sfZ8FxjGL0L1l8pii9XlZiJMICPv8NqDKr5BKulaD3gyE-Gsb-Nvry5vwesYCzfZI2E4hCUQUnVN_FBNFIsah5T6AV98f_69wxSpEEAIzZY798bc_UkjmKsQDLkZY2-enddclp_KUfA9Tl-07CcDMo6fTBd9V3H0cBwqvI3dFa6kek2jPTepCXYt9eUM9gSAshiHQc8x2SFRpmO_Bnk59qMi8I1WiTPeI7duCEU4p6HUag",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuCP6HUvA6STpuC8cHlQuEXa6N8N8dGpNC4do6lSod-dhwROQcaHSUkwHXiJqshvTUYHHZ7AxNvoYAmVpP3ARzDm1qwObPjWQe9p4-hDyRE91MBJdafI9JwQWCvU0E1ImRIdZueYGG-Wx2k8K4VnD0PqEZrpZ4DohpsDftzAu5kRe14Z-IgrjfzENLmgRZa_XqPju6W9uJIiSqUeG7ht2h6vNeLj_9h5G9qOUXgwmfEhA-lmXW0SU50VQV1tLSvIpnpM1mYEGq4HJM5Y",
-    "https://lh3.googleusercontent.com/aida-public/AB6AXuBvEqmKNUIyQOHNUuuXZxG25gj3DaB11FtrIUgmccHnQl9creSqmSi9ia_Hy8ztaydmJwRzN5tlAysroxwcekGWEaVMBsny33ke3S5GWloPE_plonl1-NafhA96QdoHkUFWK5Rkjl4IHItj5puoN37Km2cnbryTwDe4U74-fEiK4CXHnw67BUt_STdDfubwSNcuhZQrcsGm0N1L0uep0o5nkD-tJ8zELi7at6gj-8NDC6N7Z-zwmP2yT8DKei6B5vsCPbWfa3WUPbVN",
-  ];
-
+function ResultsPortalTeaser() {
   return (
     <section id="portal" className="py-14 md:py-24 bg-primary text-white overflow-hidden relative">
       <div className="absolute top-0 right-0 w-1/3 h-full bg-white/5 skew-x-12 translate-x-1/2" />
@@ -356,29 +347,12 @@ function ResultsPortal() {
             Patient Results Portal
           </h2>
           <p className="text-white/75 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed">
-            Access your medical records securely from anywhere. No need to wait
-            for physical copies — results delivered straight to your device.
+            Access your test results securely from anywhere. No need to wait for
+            physical copies — results delivered straight to your device the next
+            business day.
           </p>
 
-          <div className="flex items-center gap-4 mb-6 md:mb-8">
-            <div className="flex -space-x-3">
-              {avatars.map((src, i) => (
-                <Image
-                  key={i}
-                  src={src}
-                  alt="Active patient"
-                  width={40}
-                  height={40}
-                  className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-primary object-cover"
-                />
-              ))}
-            </div>
-            <p className="text-xs sm:text-sm font-medium">
-              Joined by 10k+ active patients
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-2.5">
+          <div className="flex flex-col gap-2.5 mb-8">
             {[
               { icon: "lock",    text: "End-to-end encrypted access" },
               { icon: "devices", text: "Available on phone, tablet & desktop" },
@@ -392,60 +366,46 @@ function ResultsPortal() {
               </div>
             ))}
           </div>
+
+          <a
+            href="/portal"
+            className="inline-flex items-center gap-2 bg-white text-primary px-7 py-3.5 rounded-xl font-bold shadow-xl hover:bg-white/90 hover:-translate-y-0.5 transition-all"
+          >
+            <span className="material-symbols-outlined text-lg">key</span>
+            Access My Results
+          </a>
         </div>
 
-        {/* Form */}
-        <div className="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl text-slate-900">
-          <h3 className="text-lg sm:text-xl font-bold mb-1">Check My Report</h3>
-          <p className="text-slate-500 text-xs sm:text-sm mb-5 md:mb-6">
-            Enter your details to access your results.
-          </p>
-
-          <div className="space-y-4">
-            <div>
-              <label
-                htmlFor="patient-id"
-                className="block text-sm font-bold text-slate-700 mb-2"
-              >
-                Patient ID / Invoice No.
-              </label>
-              <input
-                id="patient-id"
-                type="text"
-                placeholder="e.g. MAL-2023-8901"
-                autoComplete="username"
-                className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-transparent focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
-              />
+        {/* Visual mockup */}
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 border border-white/20">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+            <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+            <div className="w-2.5 h-2.5 rounded-full bg-white/30" />
+          </div>
+          <div className="space-y-3">
+            <div className="h-4 bg-white/20 rounded-lg w-3/4" />
+            <div className="h-3 bg-white/10 rounded-lg w-full" />
+            <div className="h-3 bg-white/10 rounded-lg w-5/6" />
+            <div className="my-4 h-px bg-white/10" />
+            <div className="flex gap-3">
+              <div className="h-8 bg-white/20 rounded-lg flex-1" />
+              <div className="h-8 bg-white/10 rounded-lg flex-1" />
+              <div className="h-8 bg-white/10 rounded-lg flex-1" />
+              <div className="h-8 bg-white/10 rounded-lg flex-1" />
             </div>
-
-            <div>
-              <div className="flex items-center justify-between mb-2">
-                <label
-                  htmlFor="access-code"
-                  className="block text-sm font-bold text-slate-700"
-                >
-                  Access Code
-                </label>
-                <a href="#" className="text-xs text-primary hover:underline font-medium">
-                  Forgot code?
-                </a>
+            {[1, 2, 3].map((i) => (
+              <div key={i} className="flex gap-3 items-center">
+                <div className="h-3 bg-white/15 rounded flex-1" />
+                <div className="h-3 bg-white/15 rounded w-12" />
+                <div className="h-3 bg-white/10 rounded w-16" />
+                <div className="h-3 bg-green-400/40 rounded w-10" />
               </div>
-              <input
-                id="access-code"
-                type="password"
-                placeholder="••••••••"
-                autoComplete="current-password"
-                className="w-full px-4 py-3 rounded-xl bg-slate-100 border border-transparent focus:border-primary focus:bg-white focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
-              />
-            </div>
-
-            <button
-              type="submit"
-              className="w-full bg-primary text-white py-3.5 sm:py-4 rounded-xl font-bold shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all flex items-center justify-center gap-2 text-sm sm:text-base"
-            >
-              <span className="material-symbols-outlined text-lg">key</span>
-              View Lab Results
-            </button>
+            ))}
+          </div>
+          <div className="mt-5 flex items-center gap-2">
+            <span className="material-symbols-outlined text-green-300 text-sm">verified</span>
+            <span className="text-xs text-white/60 font-medium">Report verified · MLSCN Certified</span>
           </div>
         </div>
       </div>
