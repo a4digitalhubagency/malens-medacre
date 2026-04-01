@@ -4,10 +4,15 @@ function printReport(mode: "print" | "download") {
   const el = document.getElementById("lab-report");
   if (!el) return;
 
-  // Grab Material Symbols stylesheet so icons render in the print window
-  const iconsHref = Array.from(document.querySelectorAll("link[rel='stylesheet']"))
-    .map((l) => (l as HTMLLinkElement).href)
-    .find((h) => h.includes("Material+Symbols")) ?? "";
+  // Copy ALL stylesheets (Tailwind + Google Fonts) from the current page
+  const linkTags = Array.from(document.querySelectorAll("link[rel='stylesheet']"))
+    .map((l) => `<link rel="stylesheet" href="${(l as HTMLLinkElement).href}" />`)
+    .join("\n  ");
+
+  // Copy all inline <style> blocks (Next.js injects Tailwind as inline styles in prod)
+  const styleTags = Array.from(document.querySelectorAll("style"))
+    .map((s) => `<style>${s.innerHTML}</style>`)
+    .join("\n  ");
 
   const html = `<!DOCTYPE html>
 <html lang="en">
@@ -15,14 +20,14 @@ function printReport(mode: "print" | "download") {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Malens Medcare — Lab Report</title>
-  ${iconsHref ? `<link rel="stylesheet" href="${iconsHref}" />` : ""}
+  ${linkTags}
+  ${styleTags}
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Inter, ui-sans-serif, system-ui, sans-serif; background: #fff; color: #0f172a; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    body { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
     @page { size: A4; margin: 10mm; }
   </style>
 </head>
-<body>${el.outerHTML}</body>
+<body class="bg-white p-4">${el.outerHTML}</body>
 </html>`;
 
   const win = window.open("", "_blank", "width=900,height=700");
