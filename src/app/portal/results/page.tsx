@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import PrintButton from "@/components/PrintButton";
+import ReportActions from "@/components/PrintButton";
 
 /* ─── Static demo data ───────────────────────────────────────────────────── */
 
@@ -42,8 +42,8 @@ export default function ResultsPage() {
       <main className="min-h-screen bg-background-light py-8 md:py-12 px-4">
         <div className="max-w-3xl mx-auto">
 
-          {/* Toolbar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-5 gap-3">
+          {/* Toolbar — hidden when printing */}
+          <div className="print-hide flex flex-col sm:flex-row sm:items-center justify-between mb-5 gap-3">
             <a
               href="/portal"
               className="inline-flex items-center gap-1.5 text-sm font-semibold text-slate-500 hover:text-primary transition-colors"
@@ -52,18 +52,7 @@ export default function ResultsPage() {
               Back to Portal
             </a>
 
-            <div className="flex items-center gap-2">
-              <PrintButton />
-              <button
-                disabled
-                title="Full download available in production"
-                className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2.5 rounded-lg border border-slate-200 text-sm font-semibold text-slate-400 cursor-not-allowed"
-              >
-                <span className="material-symbols-outlined text-base">download</span>
-                <span className="hidden sm:inline">Download PDF</span>
-                <span className="sm:hidden">PDF</span>
-              </button>
-            </div>
+            <ReportActions />
           </div>
 
           {/* Report card */}
